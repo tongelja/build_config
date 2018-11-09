@@ -7,8 +7,8 @@ projects = [
     'hello-world': [envs: ['qa', 'prod']]
 ]
 
-folder('deploy'
-folder('deploy/apps'
+folder('deploy')
+folder('deploy/apps')
 projects.each { project, attribs ->
     folder)"deploy/apps/${project}")
     attribs['envs'].each { env ->
