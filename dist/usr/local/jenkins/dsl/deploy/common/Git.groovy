@@ -24,6 +24,7 @@ class Git {
                         node / 'extensions' << 'hudson.plugins.git.extensions.impl.PathRestriction' {
                             includeRegions(restriction)
                             excludeRegions('')
+                        }
                     }
                 }
             }
@@ -34,7 +35,7 @@ class Git {
         def branchCommand = "git ls-remote --heads ${repo}"
         def proc = branchCommand.execute()
         proc.waitFor()
-        return proc.in.text.split('\\n').collect{ it.split('/'[-1] }.findAll { it =~/^[0-9]+[0-9]+[0-9]+$/}
+        return proc.in.text.split('\\n').collect{ it.split('/')[-1] }.findAll { it =~/^[0-9]+[0-9]+[0-9]+$/}
     }
 }
 
