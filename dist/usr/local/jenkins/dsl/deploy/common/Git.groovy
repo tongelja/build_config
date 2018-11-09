@@ -30,7 +30,7 @@ class Git {
         }
     }
 
-    statis def branchesForRepo(def repo) {
+    static def branchesForRepo(def repo) {
         def branchCommand = 'git ls-remote --heads ${repo}"
         def proc = branchCommand.execute()
         proc.waitFor()
