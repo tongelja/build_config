@@ -31,7 +31,7 @@ class Git {
     }
 
     static def branchesForRepo(def repo) {
-        def branchCommand = 'git ls-remote --heads ${repo}"
+        def branchCommand = "git ls-remote --heads ${repo}"
         def proc = branchCommand.execute()
         proc.waitFor()
         return proc.in.text.split('\\n').collect{ it.split('/'[-1] }.findAll { it =~/^[0-9]+[0-9]+[0-9]+$/}
