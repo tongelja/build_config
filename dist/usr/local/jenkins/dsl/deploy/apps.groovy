@@ -10,7 +10,7 @@ projects = [
 folder('deploy')
 folder('deploy/apps')
 projects.each { project, attribs ->
-    folder)"deploy/apps/${project}")
+    folder("deploy/apps/${project}")
     attribs['envs'].each { env ->
         jobName = "deploy/apps/${project}/${env}"
         def deployJob = job(jobName) {
